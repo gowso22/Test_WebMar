@@ -15,7 +15,7 @@
 <!-- JSTL 에서  사용하는 사용자 정의 태그.  모델 --> 
 <sql:setDataSource var="dataSource"
 	url="jdbc:mysql://localhost:3306/WebMarketDB"
-	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+	driver="com.mysql.jdbc.Driver" user="root" password="k404" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
    SELECT * FROM member WHERE ID=? and password=?  

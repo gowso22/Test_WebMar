@@ -10,8 +10,8 @@
 			<web-resource-name>WebMarket</web-resource-name>
 			<description></description>
 					
-			<url-pattern>/addProduct.jsp</url-pattern>
-			<url-pattern>/editProduct.jsp</url-pattern>
+			<url-pattern>/WebMarket18_SCH/addProduct.jsp</url-pattern>
+			<url-pattern>/WebMarket18_SCH/editProduct.jsp</url-pattern>
 			
 		</web-resource-collection>
 		<auth-constraint>
@@ -22,14 +22,14 @@
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>/login.jsp</form-login-page>
-			<form-error-page>/login_failed.jsp</form-error-page>
+			<form-login-page>/WebMarket18_SCH/login.jsp</form-login-page>
+			<form-error-page>/WebMarket18_SCH/login_failed.jsp</form-error-page>
 		</form-login-config>
 	</login-config>
 	
 	<error-page>
 		<error-code>404</error-code>
-		<location>/exceptionNoPage.jsp</location>
+		<location>/WebMarket18_SCH/exceptionNoPage.jsp</location>
 	</error-page>	
 	
 	<!-- 콘솔 상에 해당 로그를 출력하는 설정. -->

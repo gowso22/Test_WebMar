@@ -6,7 +6,8 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="./resources/css/bootstrap.min.css" /> -->
 <title>Board</title>
 </head>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -44,7 +45,7 @@
 
 	<div class="container">
 
-		<form name="newWrite" action="./BoardWriteAction.do"
+		<form name="newWrite" action="/JSP_TEST_0106/WebMarket18_SCH/BoardWriteAction.do"
 			class="form-horizontal" method="post" onsubmit="return checkForm()"
 			enctype="multipart/form-data">
 			

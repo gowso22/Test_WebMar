@@ -19,6 +19,7 @@
 	String phone = request.getParameter("phone");
 	String address = request.getParameter("address");
 
+	// 회원 가입시 입력될 날짜 형식.
 	Date currentDatetime = new Date(System.currentTimeMillis());
 	java.sql.Date sqlDate = new java.sql.Date(currentDatetime.getTime());
 	java.sql.Timestamp timestamp = new java.sql.Timestamp(currentDatetime.getTime());
@@ -26,10 +27,11 @@
 
 <sql:setDataSource var="dataSource"
 	url="jdbc:mysql://localhost:3306/WebMarketDB"
-	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+	driver="com.mysql.jdbc.Driver" user="root" password="k404" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-   UPDATE member SET PASSWORD=?, NAME=?, GENDER=?, BIRTH=?, MAIL=?, PHONE=?, ADDRESS=? WHERE ID=?
+   INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+   <sql:param value="<%=id%>" />
 	<sql:param value="<%=password%>" />
 	<sql:param value="<%=name%>" />
 	<sql:param value="<%=gender%>" />
@@ -37,10 +39,10 @@
 	<sql:param value="<%=mail%>" />
 	<sql:param value="<%=phone%>" />
 	<sql:param value="<%=address%>" />
-	<sql:param value="<%=id%>" />
+	<sql:param value="<%=timestamp%>" />
 </sql:update>
 
 <c:if test="${resultSet>=1}">
-	<c:redirect url="resultMember.jsp?msg=0" />
+	<c:redirect url="resultMember.jsp?msg=1" />
 </c:if>
 

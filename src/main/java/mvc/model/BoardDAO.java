@@ -196,7 +196,7 @@ public class BoardDAO {
 			// executeUpdate() 호출해서 디비에 저장. 
 			pstmt.executeUpdate();
 			conn.commit();
-			conn.setAutoCommit(true);
+//			conn.setAutoCommit(true);
 		} catch (Exception ex) {
 			System.out.println("insertBoard() ���� : " + ex);
 		} finally {

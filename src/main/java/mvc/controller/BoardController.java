@@ -51,7 +51,7 @@ public class BoardController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		// 게시판을 클릭시, 여기 첫번째 조건문에서 처리하는 과정을 보자.
-		if (command.equals("/BoardListAction.do")) {// ��ϵ� �� ��� ������ ����ϱ�
+		if (command.equals("/WebMarket18_SCH/BoardListAction.do")) {// ��ϵ� �� ��� ������ ����ϱ�
 			// 게시판의 페이지 정보랑, 게시물 정보등을 불러와서,
 			// 해당 request 객체에 담아두는역할.
 
@@ -60,30 +60,30 @@ public class BoardController extends HttpServlet {
 
 			RequestDispatcher rd = request.getRequestDispatcher("./board/list.jsp");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardWriteForm.do")) { // 글쓰기 폼
+		} else if (command.equals("/WebMarket18_SCH/BoardWriteForm.do")) { // 글쓰기 폼
 			requestLoginName(request);
 			RequestDispatcher rd = request.getRequestDispatcher("./board/writeForm.jsp");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardWriteAction.do")) {// 글쓰기 폼에서 입력 후 처리하는 로직.
+		} else if (command.equals("/WebMarket18_SCH/BoardWriteAction.do")) {// 글쓰기 폼에서 입력 후 처리하는 로직.
 			// 여기서 글쓰기작성시 필요한 로직
 			// 여기안에 이미지를 등록하는 메서드를 추가 할 예정.
 			requestBoardWrite(request);
-			RequestDispatcher rd = request.getRequestDispatcher("/BoardListAction.do");
+			RequestDispatcher rd = request.getRequestDispatcher("/WebMarket18_SCH/BoardListAction.do");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardViewAction.do")) {// ���õ� �� �� ������ ��������
+		} else if (command.equals("/WebMarket18_SCH/BoardViewAction.do")) {// ���õ� �� �� ������ ��������
 			requestBoardView(request);
-			RequestDispatcher rd = request.getRequestDispatcher("/BoardView.do");
+			RequestDispatcher rd = request.getRequestDispatcher("/WebMarket18_SCH/BoardView.do");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardView.do")) { // �� �� ������ ����ϱ�
+		} else if (command.equals("/WebMarket18_SCH/BoardView.do")) { // �� �� ������ ����ϱ�
 			RequestDispatcher rd = request.getRequestDispatcher("./board/view.jsp");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardUpdateAction.do")) { // ���õ� ���� ��ȸ�� �����ϱ�
+		} else if (command.equals("/WebMarket18_SCH/BoardUpdateAction.do")) { // ���õ� ���� ��ȸ�� �����ϱ�
 			requestBoardUpdate(request);
-			RequestDispatcher rd = request.getRequestDispatcher("/BoardListAction.do");
+			RequestDispatcher rd = request.getRequestDispatcher("/WebMarket18_SCH/BoardListAction.do");
 			rd.forward(request, response);
-		} else if (command.equals("/BoardDeleteAction.do")) { // ���õ� �� �����ϱ�
+		} else if (command.equals("/WebMarket18_SCH/BoardDeleteAction.do")) { // ���õ� �� �����ϱ�
 			requestBoardDelete(request);
-			RequestDispatcher rd = request.getRequestDispatcher("/BoardListAction.do");
+			RequestDispatcher rd = request.getRequestDispatcher("/WebMarket18_SCH/BoardListAction.do");
 			rd.forward(request, response);
 		}
 	}
@@ -177,9 +177,11 @@ public class BoardController extends HttpServlet {
 		
 //		String realFolder = "C:\\upload"; //웹 어플리케이션상의 절대 경로
 		// 해당 프로젝트의 특정 폴더의 위치를 절대경로로 알려줘서 상품 등록시 이미지의 저장경로.
-		String realFolder = "C:\\JSP_Workspace1\\ch18_WebMarket_2\\src\\main\\webapp\\resources\\board_images"; // 웹
+		String realFolder = "C:\\java_JSP\\JSP_TEST_0106\\src\\main\\webapp\\WebMarket18_SCH\\resources\\board_images"; // 웹
 																												// 어플리케이션상의
 																												// 절대 경로
+	
+		
 		String encType = "utf-8"; // 인코딩 타입
 		int maxSize = 10 * 1024 * 1024; // 최대 업로드될 파일의 크기10Mb
 

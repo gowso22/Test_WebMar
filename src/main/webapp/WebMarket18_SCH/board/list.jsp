@@ -18,7 +18,8 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="./resources/css/bootstrap.min.css" /> -->
 <title>Board</title>
 <script type="text/javascript">
 	function checkForm() {	
@@ -27,7 +28,7 @@
 			return false;
 		}
 
-		location.href = "./BoardWriteForm.do?id=<%=sessionId%>"
+		location.href = "/JSP_TEST_0106/WebMarket18_SCH/BoardWriteForm.do?id=<%=sessionId%>"
 	}
 </script>
 </head>
@@ -47,7 +48,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<form action="<c:url value="./BoardListAction.do"/>" method="post">
+		<form action="<c:url value="/JSP_TEST_0106/WebMarket18_SCH/BoardListAction.do"/>" method="post">
 			<div>
 				<div class="text-right">
 					<span class="badge badge-success">전체 <%=total_record%>건	</span>
@@ -68,7 +69,7 @@
 					%>
 					<tr>
 						<td><%=notice.getNum()%></td>
-						<td><a href="./BoardViewAction.do?num=<%=notice.getNum()%>&pageNum=<%=pageNum%>"><%=notice.getSubject()%></a></td>
+						<td><a href="/JSP_TEST_0106/WebMarket18_SCH/BoardViewAction.do?num=<%=notice.getNum()%>&pageNum=<%=pageNum%>"><%=notice.getSubject()%></a></td>
 						<td><%=notice.getRegist_day()%></td>
 						<td><%=notice.getHit()%></td>
 						<td><%=notice.getName()%></td>
@@ -81,7 +82,7 @@
 			<div align="center">
 				<c:set var="pageNum" value="<%=pageNum%>" />
 				<c:forEach var="i" begin="1" end="<%=total_page%>">
-					<a href="<c:url value="./BoardListAction.do?pageNum=${i}" /> ">
+					<a href="<c:url value="/JSP_TEST_0106/WebMarket18_SCH/BoardListAction.do?pageNum=${i}" /> ">
 						<c:choose>
 							<c:when test="${pageNum==i}">
 								<font color='4C5317'><b> [${i}]</b></font>

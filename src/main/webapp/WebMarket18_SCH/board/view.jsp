@@ -18,7 +18,8 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="./resources/css/bootstrap.min.css" /> -->
 <title>Board</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
 
 	<div class="container">
 		<form name="newUpdate"
-			action="BoardUpdateAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"
+			action="/JSP_TEST_0106/WebMarket18_SCH/BoardUpdateAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"
 			class="form-horizontal" method="post">
 			<div class="form-group row">
 				<label class="col-sm-2 control-label" >성명</label>
@@ -59,8 +60,9 @@
 				
 				%>
 				<div class="col-md-4">
-				<%-- <img src="C:/JSP_Workspace1/ch18_WebMarket_2/src/main/webapp/resources/board_images/<%= image %>" style="width: 70%"> --%>
-				<img src="../resources/board_images/<%= image %>" style="width: 70%">
+				
+				<img src="C:/java_JSP/JSP_TEST_0106/src/main/webapp/WebMarket18_SCH/resources/board_images/<%= image %>" style="width: 70%">
+				<%-- <img src="../resources/board_images/<%= image %>" style="width: 70%"> --%>
 				<%-- <img src="./resources/images/<%=rs.getString("p_fileName")%>" style="width: 100%"> --%>
 				<%= image %>
 				</div>
@@ -72,10 +74,10 @@
 					<c:set var="userId" value="<%=notice.getId()%>" />
 					<c:if test="${sessionId==userId}">
 						<p>
-							<a	href="./BoardDeleteAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"	class="btn btn-danger"> 삭제</a> 
+							<a	href="/JSP_TEST_0106/WebMarket18_SCH/BoardDeleteAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"	class="btn btn-danger"> 삭제</a> 
 							<input type="submit" class="btn btn-success" value="수정 ">
 					</c:if>
-					<a href="./BoardListAction.do?pageNum=<%=nowpage%>"		class="btn btn-primary"> 목록</a>
+					<a href="/JSP_TEST_0106/WebMarket18_SCH/BoardListAction.do?pageNum=<%=nowpage%>"		class="btn btn-primary"> 목록</a>
 				</div>
 			</div>
 		</form>
